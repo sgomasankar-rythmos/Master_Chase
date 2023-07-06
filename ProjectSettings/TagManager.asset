@@ -47,3 +47,9 @@ TagManager:
   - name: Player
     uniqueID: 2729097929
     locked: 0
+  - name: Moon
+    uniqueID: 2496557259
+    locked: 0
+  - name: New Layer 4
+    uniqueID: 3870896809
+    locked: 0
