@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
 
     private SpriteRenderer sr;
 
+    private string WALK_ANIMATOR = "Walk";
+
     private void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerMoveKeyBoard();
+        AnimatePlayer();
     }
 
     void PlayerMoveKeyBoard()
@@ -45,6 +48,27 @@ public class Player : MonoBehaviour
         movementX = Input.GetAxisRaw("Horizontal");
 
         transform.position += new Vector3(movementX, 0f, 0f) *moveForce * Time.deltaTime;
+
+    }
+
+    void AnimatePlayer()
+    {
+        if (movementX > 0)
+        {
+            anim.SetBool(WALK_ANIMATOR, true);
+            sr.flipX = false;
+        }
+
+        else if (movementX < 0)
+        {
+            anim.SetBool(WALK_ANIMATOR, true);
+            sr.flipX = true;
+        }
+
+        else
+        {
+            anim.SetBool(WALK_ANIMATOR, false);
+        }
 
     }
 } // class
