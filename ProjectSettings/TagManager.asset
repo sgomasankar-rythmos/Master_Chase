@@ -44,12 +44,15 @@ TagManager:
   - name: Background
     uniqueID: 3231221379
     locked: 0
-  - name: Player
-    uniqueID: 2729097929
-    locked: 0
   - name: Moon
     uniqueID: 2496557259
     locked: 0
   - name: New Layer 4
     uniqueID: 3870896809
+    locked: 0
+  - name: Player
+    uniqueID: 2729097929
+    locked: 0
+  - name: TIP
+    uniqueID: 2951175941
     locked: 0
