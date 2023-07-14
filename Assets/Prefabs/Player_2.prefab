@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1315517245531231828}
   m_Layer: 0
   m_Name: Player_2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &664837617380788223
 SpriteRenderer:
@@ -194,5 +194,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveForce: 10
-  jumpForce: 11
+  jumpForce: 15
   myBody: {fileID: 8391231518705050273}
