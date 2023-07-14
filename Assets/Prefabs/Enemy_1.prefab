@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 3516475680689432331}
   - component: {fileID: 4857232580467067872}
   - component: {fileID: 4438448401400202330}
-  - component: {fileID: 2758745427754765460}
+  - component: {fileID: 7419238152184107447}
   - component: {fileID: 6237250320797557674}
   - component: {fileID: 8394381720941557291}
   m_Layer: 0
   m_Name: Enemy_1
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4857232580467067872
 SpriteRenderer:
@@ -109,8 +109,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &2758745427754765460
-BoxCollider2D:
+--- !u!70 &7419238152184107447
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -141,19 +141,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.19661522, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.29, y: 2.11}
-    newSize: {x: 1.29, y: 2.11}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8967695, y: 2.11}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.18518895, y: -0.032206893}
+  m_Size: {x: 0.91962206, y: 2.3032405}
+  m_Direction: 0
 --- !u!50 &6237250320797557674
 Rigidbody2D:
   serializedVersion: 4

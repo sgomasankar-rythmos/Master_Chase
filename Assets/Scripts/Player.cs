@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    private float moveForce = 10f;
+    private float moveForce = 1f;
 
     [SerializeField]
     private float jumpForce = 11f;
@@ -34,26 +34,41 @@ public class Player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
+    //Initialization
+    private void OnEnable()
+    {
+        
 
+    }
+
+    //reset is called when the script is attached and not in playmode.
+    private void Reset()
+    {
+        
+    }
+    
+    //start is only ever called once for a given script
     void Start()
     {
         
     }
-
     // Update is called once per frame
     void Update()
     {
         PlayerMoveKeyBoard();
         AnimatePlayer();
         PlayerJump();
+    }
 
-    }    
+    //FixedUpdate is called before each internal physics update
+    private void FixedUpdate()
+    {
+        
+    }
     void PlayerMoveKeyBoard()
     {
         movementX = Input.GetAxisRaw("Horizontal");
-
-        transform.position += new Vector3(movementX, 0f, 0f) *moveForce * Time.deltaTime;
-
+        transform.position += new Vector3(movementX, 0f, 0f) * moveForce * Time.deltaTime;        
     }
 
     void AnimatePlayer()
@@ -86,11 +101,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag(GROUND_TAG))
+        if (collision.gameObject.CompareTag(GROUND_TAG))
         {
             isGrounded = true;            
-        }
-    }
+        }       
+    }    
 } // class
