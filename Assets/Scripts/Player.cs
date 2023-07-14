@@ -47,13 +47,7 @@ public class Player : MonoBehaviour
         AnimatePlayer();
         PlayerJump();
 
-    }
-
-    private void FixedUpdate()
-    {
-        
-
-    }
+    }    
     void PlayerMoveKeyBoard()
     {
         movementX = Input.GetAxisRaw("Horizontal");
