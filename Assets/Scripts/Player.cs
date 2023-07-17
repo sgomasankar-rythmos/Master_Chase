@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     private float movementX;
 
+    public Texture btnTexture;
+
     public Rigidbody2D myBody;
 
     private Animator anim;
@@ -24,6 +26,7 @@ public class Player : MonoBehaviour
     private string WALK_ANIMATOR = "Walk";
 
     private string GROUND_TAG = "Ground";
+    private string Enemy = "enemy";
 
     private void Awake()
     {
@@ -71,6 +74,9 @@ public class Player : MonoBehaviour
         transform.position += new Vector3(movementX, 0f, 0f) * moveForce * Time.deltaTime;        
     }
 
+ 
+
+
     void AnimatePlayer()
     {
         if (movementX > 0)
@@ -106,6 +112,23 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag(GROUND_TAG))
         {
             isGrounded = true;            
-        }       
+        }
+
+        if (collision.gameObject.CompareTag(Enemy))
+        {
+            gameObject.SetActive(false);  // avoidance
+            Time.timeScale = 0.0f; // pause the game
+        }
+
+
     }    
+
+    public void Reset_Player() {
+
+        Time.timeScale = 1.0f;
+        gameObject.transform.SetPositionAndRotation(new Vector3(-1.77f, 1.47f, 0), Quaternion.identity);
+        gameObject.SetActive(true);
+
+    }
+
 } // class

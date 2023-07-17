@@ -10,14 +10,34 @@ public class MonsterSpawner : MonoBehaviour
 
     private GameObject spawnMonster;
 
+    public Player Player;
+
     [SerializeField]
     private Transform leftPos, rightPos;
+
+    public Texture btnTexture;
+    
 
     private int randomIndex, randomSide;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawnMonsters());
+    }
+
+    private void OnGUI()
+    {
+
+
+        if (GUI.Button(new Rect(10, 10, 50, 50), btnTexture))
+        {
+            Player.Reset_Player();
+            var Enemies = FindObjectsOfType<Monster>();
+            foreach (Monster a in Enemies)
+            GameObject.Destroy(a.gameObject);
+            
+        }
+        
     }
 
     IEnumerator SpawnMonsters()
